@@ -29,7 +29,7 @@ workflows:
   test_then_deploy:
     jobs:
       - test
-      - deploy
+      - deploy:
           filters:
             branches:
               only:
