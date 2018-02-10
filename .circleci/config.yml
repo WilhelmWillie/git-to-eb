@@ -26,7 +26,11 @@ jobs:
           command: eb deploy git-to-eb
 workflows:
   version: 2
-  build_and_test:
+  test_then_deploy:
     jobs:
       - test
       - deploy
+        filters:
+          branches:
+            only:
+              - master
