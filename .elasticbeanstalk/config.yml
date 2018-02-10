@@ -1,0 +1,8 @@
+branch-defaults:
+  master:
+    environment: git-to-eb
+global:
+  application_name: Git to EB
+  default_platform: 64bit Amazon Linux 2017.09 v4.4.4 running Node.js
+  default_region: us-west-2
+  sc: git
