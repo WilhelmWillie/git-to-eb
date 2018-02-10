@@ -1,7 +1,6 @@
 version: 2
 jobs:
   test:
-    working_directory: ~/
     docker:
       - image: circleci/node
     steps:
@@ -10,7 +9,6 @@ jobs:
         name: Test 
         command: npm test
   deploy:
-    working_directory: ~/
     docker:
       - image: circleci/node
     steps:
