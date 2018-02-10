@@ -5,8 +5,9 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
+      - run: npm install
       - run:
-          name: Test 
+          name: Running tests 
           command: npm test
   deploy:
     docker:
