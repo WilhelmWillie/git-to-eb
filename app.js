@@ -39,6 +39,23 @@ app.get(
   }
 )
 
+/* Reverses a string */
+app.get(
+  '/reverse/:word',
+  (req, res) => {
+    const word = req.params.word
+    let result = ''
+
+    for (var i = word.length - 1; i >= 0; i--) {
+      result += word[i]
+    }
+
+    return res.json({
+      result
+    })
+  }
+)
+
 app.listen(process.env.PORT || 3000, () => console.log('Test app listening on port ' + (process.env.PORT || 3000)))
 
 module.exports = app
