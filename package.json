@@ -1,0 +1,14 @@
+{
+  "name": "git-to-eb",
+  "version": "1.0.0",
+  "description": "Test project for setting up automation between GitHub and AWS ElasticBeanstalk via CircleCI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wilhelm Willie",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
