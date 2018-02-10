@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  test:
+    working_directory: ~/
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run:
+        name: Test 
+        command: npm test
+  deploy:
+    working_directory: ~/
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run:
+        name: Installing deployment dependencies
+        working_directory: /
+        command: |
+          sudo apt-get -y -qq update
+          sudo apt-get install python-pip python-dev build-essential
+          sudo pip install awsebcli --upgrade
+      - run:
+          name: Deploying
+          command: eb deploy git-to-eb
+workflows:
+  version: 2
+  test_then_deploy:
+    jobs:
+      - test
+      - deploy
