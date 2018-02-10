@@ -24,6 +24,21 @@ app.get(
   })
 )
 
+/* Adds two numbers */
+app.get(
+  '/math/:a/:b',
+  (req, res) => {
+    const a = parseFloat(req.params.a)
+    const b = parseFloat(req.params.b)
+
+    const result = a + b
+
+    return res.json({
+      result
+    })
+  }
+)
+
 app.listen(process.env.PORT || 3000, () => console.log('Test app listening on port ' + (process.env.PORT || 3000)))
 
 module.exports = app
