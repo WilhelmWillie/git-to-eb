@@ -47,4 +47,11 @@ describe('Testing math API', () => {
       done()
     })
   })
+
+  it('Testing 3 + 5 (THIS SHOULD FAIL)', (done) => {
+    request('http://localhost:3000/math/3/5', (err, res, body) => {
+      expect(body).to.equal('{"result":9}')
+      done()
+    })
+  })
 })
