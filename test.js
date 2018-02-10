@@ -48,3 +48,26 @@ describe('Testing math API', () => {
     })
   })
 })
+
+describe('Testing reverse string API', () => {
+  it('Testing abc', (done) => {
+    request('http://localhost:3000/reverse/abc', (err, res, body) => {
+      expect(body).to.equal('{"result":"cba"}')
+      done()
+    })
+  })
+
+  it('Testing racecar', (done) => {
+    request('http://localhost:3000/reverse/racecar', (err, res, body) => {
+      expect(body).to.equal('{"result":"racecar"}')
+      done()
+    })
+  })
+
+  it('Testing hello', (done) => {
+    request('http://localhost:3000/reverse/hello', (err, res, body) => {
+      expect(body).to.equal('{"result":"olleh"}')
+      done()
+    })
+  })
+})
